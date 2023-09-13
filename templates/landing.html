@@ -1,0 +1,97 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load static %}
+<!--Main-->
+<div
+	class="container h-screen w-full py-6 px-6 mx-auto flex flex-wrap md:flex-row flex-col justify-between md:flex-row items-center">
+
+	<!--Left Col-->
+	<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+		<h1
+			class="my-4 text-3xl md:text-5xl text-gray-900 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">
+			Shopping made easy!</h1>
+		<p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
+			Buy your clothing's and necessary stuff from Nordics </p>
+
+		<a href="/login/"
+			class="landing_btn w-full flex items-center justify-center h-12 border-4 border-gray-900 font-bold hover:shadow-sm shadow-gray-900 text-gray-900">Login</a>
+
+	</div>
+
+	<!--Right Col-->
+	<div class="w-full lg:w-1/2 shadow-2xl  border-4 border-gray-800 h-96 flex justify-center items-center">
+		<div class="">
+			<a class="flex items-center tracking-wide no-underline hover:no-underline font-extrabold text-gray-900 text-3xl lg:text-5xl "
+				href="/">
+				<svg class="fill-current text-gray-900 mr-2" xmlns="http://www.w3.org/2000/svg" width="100" height="70"
+					viewBox="0 0 24 24">
+					<path
+						d="M5,22h14c1.103,0,2-0.897,2-2V9c0-0.553-0.447-1-1-1h-3V7c0-2.757-2.243-5-5-5S7,4.243,7,7v1H4C3.447,8,3,8.447,3,9v11 C3,21.103,3.897,22,5,22z M9,7c0-1.654,1.346-3,3-3s3,1.346,3,3v1H9V7z M5,10h2v2h2v-2h6v2h2v-2h2l0.002,10H5V10z" />
+				</svg>
+				SHOPPING
+			</a>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+</div>
+<div class="w-screen bg-white sm:px-4 xl:px-12">
+	<div class="z-10 mx-auto w-full px-6 py-12 sm:px-8 sm:py-16 lg:px-10 xl:px-16">
+
+		<div class="-mx-2 flex flex-wrap font-bold">
+			<div class="mb-4 w-full px-2 lg:w-3/5">
+				<div class="h-full w-full bg-gray-900 p-6">
+					<div class="z-10 flex flex-col justify-between">
+						<h1 class="text-4xl text-white sm:text-8xl">#1</h1>
+						<h6 class="mt-12 text-xl text-white sm:text-3xl">Marketing Studio in the Bay Area.</h6>
+					</div>
+				</div>
+			</div>
+			<div class="mb-4 w-full px-2 lg:w-2/5">
+				<div class="h-full w-full bg-gray-800 p-6">
+					<div class="z-10 flex flex-col justify-between">
+						<h1 class="text-4xl text-white sm:text-8xl">FDA</h1>
+						<h6 class="mt-12 text-xl text-white sm:text-3xl">Approved by FDA and 25 other organizations.
+						</h6>
+					</div>
+				</div>
+			</div>
+			<div class="mb-4 w-full px-2 lg:w-1/3">
+				<div class="h-full w-full bg-gray-700 p-6">
+					<div class="absolute z-0 opacity-0 hover:opacity-50" style="mix-blend-mode:multiply"></div>
+					<div class="z-10 flex flex-col justify-between">
+						<h1 class="text-4xl text-white sm:text-8xl">70+</h1>
+						<h6 class="mt-12 text-xl text-white sm:text-3xl">Awards</h6>
+					</div>
+				</div>
+			</div>
+			<div class="mb-4 w-full px-2 lg:w-1/3">
+				<div class="h-full w-full bg-gray-600 p-6">
+					<div class="z-10 flex flex-col justify-between">
+						<h1 class="text-4xl text-white sm:text-8xl">12k</h1>
+						<h6 class="mt-12 text-xl text-white sm:text-3xl">New Users Every Month</h6>
+					</div>
+				</div>
+			</div>
+			<div class="mb-4 w-full px-2 lg:w-1/3">
+				<div class="h-full w-full bg-gray-500 p-6">
+					<div class="z-10 flex flex-col justify-between">
+						<h1 class="text-4xl text-white sm:text-8xl">23</h1>
+						<h6 class="mt-12 text-xl text-white sm:text-3xl">Fortune 500 Clients</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- jQuery if you need it -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+{%endblock%}
