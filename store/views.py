@@ -12,10 +12,10 @@ import json
 import datetime
 
 
-
 # Create your views here.
 def home(request):
     return render(request, "landing.html")
+
 
 @login_required(redirect_field_name="login_redirect", login_url="/login/")
 def profile(request, slug):
@@ -46,9 +46,6 @@ class Store(ListView):
         else:
             object_list = Product.objects.all()
             return object_list
-
-
-
 
 
 @login_required(redirect_field_name="login_redirect", login_url="/login/")
@@ -85,24 +82,17 @@ def update_item(request):
         orderItem.quantity = (orderItem.quantity - 1)
         messages.success(request, "Item decremented successfully")
 
-
     orderItem.save()
 
     if(action == 'rm'):
         orderItem.delete()
         messages.success(request, "Item deleted successfully")
 
-
     if(orderItem.quantity <= 0):
         orderItem.delete()
-        messages.success(request, "Item deleted successfully")
-
-   
-
-    
+        messages.success(request, "Item deleted successfully")   
 
     return JsonResponse("Item added to cart", safe=False)
-
 
 
 # Will require an id
@@ -124,6 +114,7 @@ def checkout_page(request):
         order={'get_sub_total': 0, 'get_total': 0}
     context={'items': items, 'order': order}
     return render(request, "checkout.html", context)
+
 
 # Order processing view
 def process_order(request):
@@ -150,6 +141,7 @@ def process_order(request):
     else:
         messages.error(request, "You are not logged in")
     return JsonResponse(f"Order Processed {data}", safe=False)
+
 
 def login_view(request):
     if request.method == "POST":
@@ -179,6 +171,7 @@ def login_view(request):
     else:
         return render(request, "login.html", context={"title": "Login"})
 
+
 def signup_view(request):
     if request.method == "POST":
         data = request.POST
@@ -191,9 +184,6 @@ def signup_view(request):
         gender = data.get("gender")
         address = data.get("address")
         phone = data.get("phone")
-
-
-        
 
         # Email exist check
         user = User.objects.filter(email=email)

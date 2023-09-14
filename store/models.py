@@ -17,9 +17,9 @@ class Customer(models.Model):
 class Banner(models.Model):
     image = models.ImageField(upload_to="web_images/store/banner", default="web_images/store/E-Commerce Facebook Ad.png")
 
+
 class Category(models.Model):
     category = models.CharField(max_length=40)
-
 
     def __str__(self) -> str:
         return self.category
@@ -32,9 +32,7 @@ class Product_Id(models.Model):
     product_id = models.CharField(max_length=50)
 
     def __str__(self) -> str:
-        return self.product_id
-
-    
+        return self.product_id 
 
 
 class Product(models.Model):
@@ -48,15 +46,11 @@ class Product(models.Model):
     product_discount = models.IntegerField(default=0)
     slug = models.SlugField(unique=True, null=True)
 
-
     def __str__(self) -> str:
         return self.product_name
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"slug": self.slug})
-    
-
-
 
 
 class Order(models.Model):
@@ -70,7 +64,6 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return str(self.id)
-
 
     def get_sub_total(self):
         orderitems = self.orderitem_set.all()
@@ -92,8 +85,6 @@ class Order(models.Model):
         
         return count
 
-
-    
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
